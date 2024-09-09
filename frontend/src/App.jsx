@@ -1,51 +1,29 @@
-import Footer from "./components/Footer"
+import { Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
 
-import Navbar from "./components/Navbar"
-import Rough from "./components/Rough"
-import Signin from "./components/Signin"
+import Navbar from "./components/Navbar";
+import Rough from "./components/Rough";
+import Signin from "./components/Signin";
+import { Routes } from "react-router-dom";
 
+const App = () => {
+  console.log("[+] App COmponent");
 
-const App = ()=>{
-  console.log('apppppp')
-  return(
+  return (
     <div className="flex flex-col min-h-screen font-libre-baskerville">
-
-      <Navbar/>
+      <Navbar />
 
       <div className="flex-grow text-lg p-4 pt-20 bg-green-200x flex">
-
-        <Rough/>
-        {/* <Signin/> */}
-
-        
-        
-        
-
-        {/* Home Page
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non autem nam fugit voluptas suscipit ducimus! Eaque nostrum, esse sequi optio aliquid, dolor corporis quasi dolore aliquam quia rerum dicta consequuntur.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nemo rerum nihil, perferendis quam asperiores qui inventore perspiciatis ipsa sint delectus voluptate officiis quo omnis? Ipsa inventore corrupti sit delectus.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum, cupiditate officia nisi praesentium exercitationem a eaque autem enim voluptatibus! Amet explicabo officiis ullam magni, quo fugiat consectetur dignissimos ad. */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<Signin />} />
+        </Routes>
       </div>
 
-      <Footer/>
-      
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
