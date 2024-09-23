@@ -6,11 +6,11 @@ const Signin = ()=>{
                   <div className="flex justify-center self-center  ">
         <div className="p-12 sm:shadow-md sm:bg-gray-50 mx-auto rounded-lg w-100 ">
             <div className="mb-4">
-              <h3 className="font-semibold text-2xl text-gray-800">Sign In</h3>
-              <p className="text-gray-500">Please sign in to your account.</p>
+              <h3 className="font-semibold text-3xl text-gray-800 font-oswald ">Sign In</h3>
+              <p className="text-gray-500 text-sm">Please sign in to your account.</p>
             </div>
             <div className="space-y-5">
-                        <div class="space-y-2">
+                        <div className="space-y-2">
                               <label className="text-sm font-medium text-gray-700 tracking-wide">Email</label>
               <input className=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-blue-400" type="" placeholder="mail@gmail.com"/>
               </div>
@@ -23,7 +23,7 @@ const Signin = ()=>{
               <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input id="remember_me" name="remember_me" type="checkbox" className="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded"/>
-                <label for="remember_me" className="ml-2 block text-sm text-gray-800">
+                <label htmlFor="remember_me" className="ml-2 block text-sm text-gray-800">
                   Remember me
                 </label>
               </div>
