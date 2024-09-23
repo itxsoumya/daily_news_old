@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         'libre-baskerville': ['"Libre Baskerville"', 'serif'],
+        'oswald': ['"Oswald"', 'sans-serif'],
       },
       fontWeight: {
         regular: 400,
@@ -18,6 +19,7 @@ export default {
         italic: 'italic',
       },
     },
+    
   },
   plugins: [
     daisyui,

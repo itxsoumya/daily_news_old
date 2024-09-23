@@ -136,7 +136,7 @@ const Navbar = () => {
           </svg>
         </label>
 
-        {/* {openMenu ? <MainMenu setOpenMenu={setOpenMenu} /> : null} */}
+        {openMenu ? <MainMenu setOpenMenu={setOpenMenu} /> : null}
 
         {/* end icon menu */}
       </div>

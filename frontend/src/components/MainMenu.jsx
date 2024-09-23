@@ -54,7 +54,7 @@ const MainMenu = ({ setOpenMenu }) => {
           <div
             className="btn grow bg-red-600 text-white "
             onClick={() => {
-              setOpenMenu(false);
+              setOpenMenu((prev)=>!prev);
               navigate("/signin");
             }}
           >
