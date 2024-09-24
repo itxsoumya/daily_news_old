@@ -6,6 +6,9 @@ import Navbar from "./components/Navbar";
 import Rough from "./components/Rough";
 import Signin from "./components/Signin";
 import { Routes } from "react-router-dom";
+import ReadMore from "./components/ReadMore";
+import SearchDialog from "./components/SearchDialog";
+import SearchResult from "./components/SearchResult";
 
 const App = () => {
   console.log("[+] App COmponent");
@@ -13,11 +16,14 @@ const App = () => {
   return (
     <div className="flex flex-col min-h-screen font-libre-baskerville">
       <Navbar />
+      <SearchDialog/>
 
       <div className="flex-grow text-lg p-4 pt-20 bg-green-200x flex">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<Signin />} />
+          <Route path="/read/:topic" element={<ReadMore />} />
+          <Route path="/search/:item" element={<SearchResult/>}/>
         </Routes>
       </div>
 

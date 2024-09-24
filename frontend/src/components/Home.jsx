@@ -5,17 +5,7 @@ import { memo } from "react";
 import HomeSection from "./HomeSection";
 
 const Home = memo(() => {
-  // const rssUrl = "/api/news/national/feeder/default.rss";
-  const rssUrl = "/api/feeder/default.rss";
-
-  const { data, loading, error } = useFetchTH(rssUrl);
-
-  if (loading) {
-    return <Skeleton />;
-  }
-  if (error) {
-    console.error(error);
-  }
+  
 
   console.log("[+] Home component");
 
@@ -30,13 +20,36 @@ const Home = memo(() => {
         rssUrl="/api/feeder/default.rss"
         onlyImg={true}
         heading={"INDIA"}
-        limit={5}
+        limit={6}
       />
+      <div className="mt-10"></div>
       <HomeSection
-      rssUrl="/api/news/national/feeder/default.rss"
-      onlyImg
-      heading={'TOP NEWS'}
-      limit={6}
+        rssUrl="/api/news/international/feeder/default.rss"
+        onlyImg
+        heading={"WORLD"}
+        limit={6}
+      />
+
+      <div className="mt-10"></div>
+      <HomeSection
+        rssUrl="/api/sport/feeder/default.rss"
+        onlyImg
+        heading={"SPORTS"}
+        limit={6}
+      />
+      <div className="mt-10"></div>
+      <HomeSection
+        rssUrl="/api/entertainment/feeder/default.rss"
+        onlyImg
+        heading={"ENTERTAINMENT"}
+        limit={6}
+      />
+      <div className="mt-10"></div>
+      <HomeSection
+        rssUrl="/api/life-and-style/feeder/default.rss"
+        onlyImg
+        heading={"Life & Style"}
+        limit={6}
       />
     </div>
   );
