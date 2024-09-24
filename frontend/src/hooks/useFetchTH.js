@@ -21,6 +21,8 @@ const useFetchTH = (url, options = {}) => {
         });
         const jsonObj = parser.parse(text);
 
+        console.log(jsonObj)
+
         // Extract the desired data
         const items = jsonObj.rss.channel.item.map((item) => {
           const mediaContent = item["media:content"]
@@ -35,7 +37,7 @@ const useFetchTH = (url, options = {}) => {
           };
         });
 
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         setData(items);
       } catch (err) {

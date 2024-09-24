@@ -5,7 +5,16 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
+  const [searchInput,setSearchInput] = useState()
+
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    navigate(`/search/${searchInput}`);
+    setSearchInput('')
+  };
 
   console.log("open");
   console.log(openMenu);
@@ -52,18 +61,15 @@ const Navbar = () => {
 
         <div className="flex-none gap-2">
           <div className="form-control max-lg:hidden">
-            {/* <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
-            /> */}
+              <form onSubmit={handleSubmit}>
             <label className="input input-bordered flex items-center gap-2">
-              <input type="text" className="grow" placeholder="Search" />
+              <input type="text" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} className="grow" placeholder="Search" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
                 fill="currentColor"
                 className="h-4 w-4 opacity-70"
+                onClick={handleSubmit}
               >
                 <path
                   fillRule="evenodd"
@@ -72,6 +78,7 @@ const Navbar = () => {
                 />
               </svg>
             </label>
+              </form>
           </div>
           <div className="dropdown dropdown-end max-lg:hidden">
             <div
@@ -86,6 +93,7 @@ const Navbar = () => {
                 />
               </div>
             </div>
+
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
@@ -105,6 +113,28 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
+
+        {/* search for mobile */}
+        <div
+          className="btn btn-circle btn-ghost lg:hidden"
+          onClick={() => document.getElementById("my_modal_1").showModal()}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={3}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            />
+          </svg>
+        </div>
+
         {/* Menu icon */}
 
         <label className="btn btn-circle btn-ghost swap swap-rotate lg:hidden">
