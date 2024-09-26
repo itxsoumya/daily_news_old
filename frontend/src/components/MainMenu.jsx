@@ -1,72 +1,72 @@
 import Category from "./Category";
-import { useNavigate } from "react-router-dom";
 
-const MainMenu = ({ setOpenMenu }) => {
-  const navigate = useNavigate();
+const MainMenu = () => {
+  console.log("menuuuu");
   return (
-    <div className="z-50 h-screen bg-white absolute top-16 left-0 right-0 glassx scroll-smooth overflow-auto">
-      <div className=" h-full w-full max-w-4xl mx-auto">
-        {/* search */}
-        <form className=" p-2">
-          <label
-            htmlFor="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-          >
-            Search
-          </label>
-          <div className="relative">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 "
-              placeholder="Search Mockups, Logos..."
-              required=""
-            />
-            <button
-              type="submit"
-              className="text-white absolute end-2.5 bottom-2.5 bg--700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Search
-            </button>
-          </div>
+    <dialog id="my_modal_2" className="modal">
+      <div className="modal-box bg-red-300x h-full">
+        <form method="dialog">
+          {/* if there is a button in form, it will close the modal */}
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
         </form>
 
-        {/* signup signin */}
-        <div className="flex p-2  justify-between gap-2">
-          <div className="btn grow  btn-active">Sign Up</div>
-          <div
-            className="btn grow bg-red-600 text-white "
-            onClick={() => {
-              setOpenMenu((prev)=>!prev);
-              navigate("/signin");
-            }}
-          >
-            Sign In
+        <div className="flex gap-5 mt-14">
+          {/* <div className="btn grow btn-neutral">Sign In</div>
+          <div className="btn grow">Sign Up</div> */}
+        </div>
+
+        <div className="flex flex-col bg-cyan-300x gap-1">
+          <div className="avatar placeholder bg-red-400x mx-auto">
+            <div className="bg-neutral text-neutral-content w-24 rounded-full">
+              <span className="text-3xl">D</span>
+            </div>
+          </div>
+          <div className="text-2xl  text-center break-words">John Doe</div>
+          <div className="flex gap-2 mt-4 ">
+            <button className="btn w-1/2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+              Liked Post
+            </button>
+            <div className="btn w-1/2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+                />
+              </svg>
+              Logout
+            </div>
           </div>
         </div>
 
-        {/* category */}
+        <Category/>
+    
 
-        <Category />
       </div>
-    </div>
+    </dialog>
   );
 };
 
